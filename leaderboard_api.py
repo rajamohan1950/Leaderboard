@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import redis
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 
 app = FastAPI()
 
@@ -16,7 +16,11 @@ app.add_middleware(
 )
 
 # Connect to Redis
-r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+#r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+
+REDIS_URL = os.getenv("REDIS_URL", "redis://default:yourpassword@your-upstash-url:6379")
+r = redis.Redis.from_url(REDIS_URL)
+
 
 # Model for leaderboard entry
 class ScoreEntry(BaseModel):
