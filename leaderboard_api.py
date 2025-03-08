@@ -18,7 +18,7 @@ app.add_middleware(
 # Connect to Redis
 #r = redis.Redis(host='localhost', port=6379, decode_responses=True)
 
-REDIS_URL = os.getenv("REDIS_URL", "redis://default:yourpassword@your-upstash-url:6379")
+REDIS_URL = os.getenv("REDIS_URL", "redis://default:Arunachala@1950@charmed-elf-23549.upstash.io:6379")
 r = redis.Redis.from_url(REDIS_URL)
 
 
