@@ -17,7 +17,7 @@ app.add_middleware(
 # Connect to Redis
 #r = redis.Redis(host='localhost', port=6379, decode_responses=True)
 
-r = Redis(url="https://charmed-elf-23549.upstash.io", token="AVv9AAIjcDExMmIzMWZmNmM3YTg0ZjU4YTc4NTBjN2FjNmU3NzZiM3AxMA")
+r = redis(url="https://charmed-elf-23549.upstash.io", token="AVv9AAIjcDExMmIzMWZmNmM3YTg0ZjU4YTc4NTBjN2FjNmU3NzZiM3AxMA")
 
 # Model for leaderboard entry
 class ScoreEntry(BaseModel):
